@@ -3,7 +3,7 @@ import statsmodels.api as sm
 from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
 
-filepath1 = "girls village.xlsx"
+filepath1 = "girlsvillage.xlsx"
 filepath2 = "girlscity.xlsx"
 filepath3 = "boysvillage.xlsx"
 filepath4 = "boyscity.xlsx"
