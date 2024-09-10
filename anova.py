@@ -32,7 +32,7 @@ print(combined_df.head())
 combined_df.rename(columns={'STRESS': 'Academic_Stress', 'TOTAL': 'Adjustment'}, inplace=True)
 
 # Prepare the formula for factorial ANOVA: Adjustment ~ Academic_Stress * Gender * Region
-anova_formula = 'Adjustment ~ C(Region)'
+anova_formula = 'Adjustment ~ Academic_Stress * Gender * Region'
 
 # Fit the model
 anova_model = ols(anova_formula, data=combined_df).fit()
@@ -42,3 +42,212 @@ anova_table = sm.stats.anova_lm(anova_model, typ=2)
 
 # Display the ANOVA table
 print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'AD1 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'AD2 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'AD3 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'MSTOTAL ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'MS1 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'MS2 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'MS3 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'MS4 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'MS5 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+anova_formula = 'MS6 ~ Academic_Stress * Gender * Region'
+
+# Fit the model
+anova_model = ols(anova_formula, data=combined_df).fit()
+
+# Perform ANOVA
+anova_table = sm.stats.anova_lm(anova_model, typ=2)
+
+# Display the ANOVA table
+print(anova_table)
+
+# Check if F-value is greater than p-value
+for index, row in anova_table.iterrows():
+    f_value = row['F']
+    p_value = row['PR(>F)']
+    if f_value > p_value:
+        print(f"{index}: Significant (F-value is greater than p-value)")
+    else:
+        print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
