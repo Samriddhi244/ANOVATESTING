@@ -29,6 +29,13 @@ boys_city_df['Region']='City'
 combined_df = pandas.concat([boys_city_df, boys_village_df, girls_city_df, girls_village_df])
 print(combined_df.head())
 
+
+combined_df['MS1'].fillna(combined_df['MS1'].median(), inplace=True)
+
+# Check for missing data
+missing_data = combined_df.isnull().sum()
+print(missing_data)
+
 combined_df.rename(columns={'STRESS': 'Academic_Stress', 'TOTAL': 'Adjustment'}, inplace=True)
 
 # Prepare the formula for factorial ANOVA: Adjustment ~ Academic_Stress * Gender * Region
