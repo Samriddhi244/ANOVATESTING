@@ -1,7 +1,9 @@
 import pandas
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
+import matplotlib.pyplot as plt
 from statsmodels.stats.anova import anova_lm
+import seaborn as sns
 
 filepath1 = "girlsvillage.xlsx"
 filepath2 = "girlscity.xlsx"
@@ -58,6 +60,20 @@ for index, row in anova_table.iterrows():
         print(f"{index}: Significant (F-value is greater than p-value)")
     else:
         print(f"{index}: Not Significant (F-value is less than or equal to p-value)")
+
+    plt.figure(figsize=(10, 6))
+    
+    # Use seaborn's lineplot for better visualizations
+    sns.lineplot(x='Academic_Stress', y='Adjustment', hue='Gender', style='Region', markers=True, data=combined_df)
+    
+    plt.title("Line Plot of Adjustment vs Academic Stress (by Gender and Region)")
+    plt.xlabel("Academic Stress")
+    plt.ylabel("Adjustment")
+    plt.legend(title='Group')
+    
+    # Display the plot
+    plt.show()
+
 
 anova_formula = 'AD1 ~ Academic_Stress * Gender * Region'
 
