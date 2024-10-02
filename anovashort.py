@@ -48,6 +48,18 @@ plt.xlabel("region")
 plt.ylabel("adjustment")
 plt.show()
 
+sns.barplot(x='Gender', y='MSTOTAL',width=0.3, data=combined_df)
+plt.title("effect of gender on MSTOTAL")
+plt.xlabel("gender")
+plt.ylabel("MSTOTAL")
+plt.show()
+
+sns.barplot(x='Region', y='MSTOTAL',width=0.4, data=combined_df)
+plt.title('Effect of Region on MSTOTAL')
+plt.xlabel("region")
+plt.ylabel("MSTOTAL")
+plt.show()
+
 # 3. Main Effect: Academic Stress vs Adjustment
 sns.lineplot(x='Academic_Stress', y='Adjustment', data=combined_df)
 plt.title('Effect of Academic Stress on Adjustment')
